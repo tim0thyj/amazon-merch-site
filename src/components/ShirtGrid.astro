@@ -2,15 +2,78 @@
 import products from '../../data/products.json';
 ---
 
-<section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 2rem;">
+<style>
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+
+  .card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #444;
+    padding: 0 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .buy-button {
+    margin-top: 1rem;
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+  }
+
+  .buy-button:hover {
+    background: #444;
+  }
+</style>
+
+<section>
   {products.map((shirt) => (
-    <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; text-align: center;">
-      <img src={shirt.image} alt={shirt.title} style="max-width: 100%; height: auto; border-radius: 8px;" />
-      <h2>{shirt.title}</h2>
-      <p>{shirt.description}</p>
-      <a href={shirt.amazonUrl} target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.5rem 1rem; background: #000; color: #fff; text-decoration: none; border-radius: 5px; margin-top: 0.5rem;">
-        Buy on Amazon
-      </a>
+    <div class="card">
+      <img src={shirt.image} alt={shirt.title} />
+      <div class="content">
+        <h2>{shirt.title}</h2>
+        <p>{shirt.description}</p>
+        <a class="buy-button" href={shirt.amazonUrl} target="_blank" rel="noopener noreferrer">
+          Buy on Amazon
+        </a>
+      </div>
     </div>
   ))}
 </section>
