@@ -1,0 +1,16 @@
+---
+import products from '../../data/products.json';
+---
+
+<section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 2rem;">
+  {products.map((shirt) => (
+    <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; text-align: center;">
+      <img src={shirt.image} alt={shirt.title} style="max-width: 100%; height: auto; border-radius: 8px;" />
+      <h2>{shirt.title}</h2>
+      <p>{shirt.description}</p>
+      <a href={shirt.amazonUrl} target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.5rem 1rem; background: #000; color: #fff; text-decoration: none; border-radius: 5px; margin-top: 0.5rem;">
+        Buy on Amazon
+      </a>
+    </div>
+  ))}
+</section>

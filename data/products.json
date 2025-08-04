@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Cookies Shirt – Tech Humor",
+    "slug": "cookies-tech",
+    "image": "/images/cookies-tech.png",
+    "description": "For the dev who clears cookies... only under protest. A perfect tee for IT folks and browser warriors.",
+    "category": "IT & Tech",
+    "amazonUrl": "https://www.amazon.com/dp/B0F3M2RHTP?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1"
+  },
+  {
+    "title": "Rib Master BBQ Shirt",
+    "slug": "rib-master",
+    "image": "/images/rib-master.png",
+    "description": "Low and slow. This one's for the pitmasters who know the language of smoke, sauce, and perfectly charred ribs.",
+    "category": "BBQ & Food",
+    "amazonUrl": "https://www.amazon.com/dp/B0F4LPLSQL?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1"
+  },
+  {
+    "title": "Trail Mix Adventure Club",
+    "slug": "trail-mix",
+    "image": "/images/trail-mix.png",
+    "description": "Nuts, chocolate, and pure outdoor vibes. The retro hiking shirt for snackers with a love for dirt trails and pine trees.",
+    "category": "Outdoors & Hiking",
+    "amazonUrl": "https://www.amazon.com/dp/B0FBHPYSZP?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1"
+  }
+]
