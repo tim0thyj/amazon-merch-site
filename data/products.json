@@ -5,7 +5,9 @@
     "image": "/images/cookies-tech.png",
     "description": "For the dev who clears cookies... only under protest. A perfect tee for IT folks and browser warriors.",
     "category": "IT & Tech",
-    "amazonUrl": "https://www.amazon.com/dp/B0F3M2RHTP?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1"
+    "amazonUrl": "https://www.amazon.com/dp/B0F3M2RHTP?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1",
+    "seoTitle": "Funny ‘I Love Cookies’ Tech Shirt – Web Developer Humor Tee",
+    "metaDescription": "A must-have shirt for devs who live in Chrome and snack on cookies—digital and edible. Great gift for IT pros and code nerds alike."
   },
   {
     "title": "Rib Master BBQ Shirt",
@@ -13,7 +15,9 @@
     "image": "/images/rib-master.png",
     "description": "Low and slow. This one's for the pitmasters who know the language of smoke, sauce, and perfectly charred ribs.",
     "category": "BBQ & Food",
-    "amazonUrl": "https://www.amazon.com/dp/B0F4LPLSQL?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1"
+    "amazonUrl": "https://www.amazon.com/dp/B0F4LPLSQL?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1",
+    "seoTitle": "Rib Master BBQ Shirt – Low & Slow Pitmaster Graphic Tee",
+    "metaDescription": "The perfect shirt for backyard legends and low-and-slow rib kings. This tee’s got smoke, sass, and sauce. Great gift for grill dads and meatheads."
   },
   {
     "title": "Trail Mix Adventure Club",
@@ -21,6 +25,8 @@
     "image": "/images/trail-mix.png",
     "description": "Nuts, chocolate, and pure outdoor vibes. The retro hiking shirt for snackers with a love for dirt trails and pine trees.",
     "category": "Outdoors & Hiking",
-    "amazonUrl": "https://www.amazon.com/dp/B0FBHPYSZP?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1"
+    "amazonUrl": "https://www.amazon.com/dp/B0FBHPYSZP?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1",
+    "seoTitle": "Trail Mix Adventure Club Shirt – Retro Hiking Tee for Snackers",
+    "metaDescription": "This vintage hiking tee celebrates the one snack to rule them all—trail mix. A crunchy, quirky design for outdoorsy types who walk for snacks, not steps."
   }
 ]

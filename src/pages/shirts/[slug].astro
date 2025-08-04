@@ -1,0 +1,72 @@
+---
+import products from '../../../data/products.json';
+
+export async function getStaticPaths() {
+  return products.map((shirt) => ({
+    params: { slug: shirt.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const shirt = products.find((item) => item.slug === slug);
+
+if (!shirt) {
+  throw new Error(`Shirt not found for slug: ${slug}`);
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{shirt.seoTitle}</title>
+    <meta name="description" content={shirt.metaDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Inter, sans-serif;
+        background: #f9f9f9;
+        color: #222;
+        margin: 0;
+        padding: 2rem;
+        max-width: 800px;
+        margin-inline: auto;
+      }
+      img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        font-size: 1rem;
+        color: #444;
+      }
+      .buy-button {
+        display: inline-block;
+        margin-top: 1.5rem;
+        background: #FF9900;
+        color: #111;
+        text-decoration: none;
+        padding: 0.6rem 1.4rem;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background 0.2s ease;
+      }
+      .buy-button:hover {
+        background: #FFB84D;
+      }
+    </style>
+  </head>
+  <body>
+    <img src={shirt.image} alt={shirt.title} />
+    <h1>{shirt.title}</h1>
+    <p>{shirt.description}</p>
+    <a class="buy-button" href={shirt.amazonUrl} target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+  </body>
+</html>
