@@ -58,9 +58,20 @@ strong, b {
 }
 a {
   color: var(--accent);
+  text-decoration: none;
 }
 a:hover {
   color: var(--accent);
+}
+
+/* Remove underline from links inside product cards */
+.card p a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card p a:hover {
+  text-decoration: underline;
 }
 
 p {
@@ -130,7 +141,6 @@ hr {
   white-space: nowrap;
 }
 
-/* === FILTER + BACK BUTTON STYLES === */
 /* === FILTER + BACK BUTTON STYLES === */
 button,
 a.back-button {
