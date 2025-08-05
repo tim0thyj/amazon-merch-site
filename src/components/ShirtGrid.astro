@@ -52,14 +52,18 @@ const categories = ['All', ...new Set(products.map(p => p.category))];
     overflow: hidden;
     background: #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    opacity: 1;
-    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 480px;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
 
   .card.hidden {
-  display: none;
-}
+    display: none;
+  }
 
   img {
     width: 100%;
@@ -79,6 +83,10 @@ const categories = ['All', ...new Set(products.map(p => p.category))];
   }
 
   .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 1rem;
     text-align: center;
   }
@@ -91,7 +99,7 @@ const categories = ['All', ...new Set(products.map(p => p.category))];
     border-radius: 8px;
     padding: 0.5rem 1rem;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: auto;
     text-decoration: none;
     transition: background-color 0.2s ease;
   }
@@ -126,30 +134,30 @@ const categories = ['All', ...new Set(products.map(p => p.category))];
 <script is:inline>
   const buttons = document.querySelectorAll('#filters button');
   const grid = document.querySelector('#shirt-grid');
-  const cards = Array.from(document.querySelectorAll('.card'));
+  const cards = document.querySelectorAll('.card');
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       const category = button.dataset.category;
 
-      // Toggle active button styling
       buttons.forEach(btn => btn.classList.remove('active'));
       if (button.id !== 'clear-filter') {
         button.classList.add('active');
       }
 
-      // Filter logic
-      const matchedCards = cards.filter(card =>
-        category === 'All' || card.dataset.category === category
-      );
+      const matchedCards = [];
 
-      // Clear grid and repopulate only matched cards
-      grid.innerHTML = '';
-      matchedCards.forEach(card => {
-        grid.appendChild(card);
-        card.classList.remove('hidden');
+      cards.forEach(card => {
+        const match = category === 'All' || card.dataset.category === category;
+        card.classList.toggle('hidden', !match);
+        if (match) matchedCards.push(card);
       });
+
+      setTimeout(() => {
+        matchedCards.forEach(card => {
+          grid.appendChild(card);
+        });
+      }, 250);
     });
   });
 </script>
-
