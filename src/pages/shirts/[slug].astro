@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import products from '../../../data/products.json';
+
+export async function getStaticPaths() {
+  return products.map(product => ({
+    params: { slug: product.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const shirt = products.find(item => item.slug === slug);
+
+if (!shirt) {
+  throw new Error(`Shirt not found for slug: ${slug}`);
+}
+---
+
+<Layout title={shirt.seoTitle} description={shirt.metaDescription}>
+  <a href="/" class="back-button">&larr; Back</a>
+
+  <div class="shirt-detail">
+    <img src={shirt.image} alt={shirt.title} />
+    <h1>{shirt.title}</h1>
+    <p>{shirt.description}</p>
+    <a
+      href={shirt.amazonUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="buy-button"
+    >
+      Buy on Amazon
+    </a>
+  </div>
+</Layout>

@@ -4,126 +4,24 @@ import products from '../../data/products.json';
 const categories = ['All', ...new Set(products.map(p => p.category))];
 ---
 
-<style>
-  .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin: 2rem 0;
-    justify-content: center;
-  }
-
-  .filters button {
-    background: #eee;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-
-  .filters button.active {
-    background: #222;
-    color: #fff;
-  }
-
-  section.grid {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 2.5rem;
-    padding: 2rem 0;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .card {
-    flex: 0 0 280px;
-    max-width: 280px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 480px;
-  }
-
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-
-  .card.hidden {
-    display: none;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-    margin: 1rem 0 0.5rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-    color: #444;
-  }
-
-  .content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .buy-button {
-    display: inline-block;
-    background-color: #ff9900;
-    color: #111;
-    font-weight: bold;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    margin-top: auto;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-  }
-
-  .buy-button:hover {
-    background-color: #ffc266;
-  }
-</style>
-
 <div class="filters" id="filters">
   {categories.map((cat) => (
     <button data-category={cat} class={cat === 'All' ? 'active' : ''}>{cat}</button>
   ))}
-  <button data-category="All" id="clear-filter">Clear Filter</button>
 </div>
 
 <section class="grid" id="shirt-grid">
   {products.map((shirt) => (
     <div class="card" data-category={shirt.category}>
-      <img src={shirt.image} alt={shirt.title} />
-      <div class="content">
-        <h2>{shirt.title}</h2>
-        <p>{shirt.description}</p>
-        <a class="buy-button" href={shirt.amazonUrl} target="_blank" rel="noopener noreferrer">
+      <a href={`/shirts/${shirt.slug}`} class="card-link">
+        <img src={shirt.image} alt={shirt.title} />
+        <div class="content">
+          <h2>{shirt.title}</h2>
+          <p>{shirt.description}</p>
+        </div>
+      </a>
+      <div style="text-align: center;">
+        <a href={shirt.amazonUrl} class="buy-button" target="_blank" rel="noopener noreferrer">
           Buy on Amazon
         </a>
       </div>
@@ -141,9 +39,7 @@ const categories = ['All', ...new Set(products.map(p => p.category))];
       const category = button.dataset.category;
 
       buttons.forEach(btn => btn.classList.remove('active'));
-      if (button.id !== 'clear-filter') {
-        button.classList.add('active');
-      }
+      button.classList.add('active');
 
       const matchedCards = [];
 
@@ -161,3 +57,90 @@ const categories = ['All', ...new Set(products.map(p => p.category))];
     });
   });
 </script>
+
+<style>
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0;
+    justify-content: center;
+  }
+
+  .filters button {
+    font-family: "Atkinson", sans-serif;
+    background-color: #eee;
+    color: #111;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+  }
+
+  .filters button:hover:not(.active) {
+    background-color: #ddd;
+  }
+
+  .filters button.active {
+    background: #222;
+    color: #fff;
+  }
+
+  section.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card {
+    flex: 0 0 280px;
+    max-width: 280px;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .card.hidden {
+    display: none;
+  }
+
+  .card img {
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .content {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #444;
+  }
+</style>

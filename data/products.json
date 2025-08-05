@@ -29,11 +29,14 @@
     "seoTitle": "Trail Mix Adventure Club Shirt – Retro Hiking Tee for Snackers",
     "metaDescription": "This vintage hiking tee celebrates the one snack to rule them all—trail mix. A crunchy, quirky design for outdoorsy types who walk for snacks, not steps."
   },
-{
-  "title": "Sausage Master",
-  "description": "For the grill kings who know their links. This one's for the meat whisperers.",
-  "image": "/images/sausage-master.png",
-  "amazonUrl": "https://www.amazon.com/Barbecue-Pun-Meat-BBQ-Sausage/dp/B0F4LX926C/ref=sr_1_18?dib=eyJ2IjoiMSJ9.OyK6rM1FlauOjb4qj8mq3mBUbXUUeS5Nc6l3gUkGdfxd9imOxADhCh_b7fxNb_ivr37sq4gVCRTiBftrCHA-LJCfeQlk00dwHF35v7n_-02n5lQglZ2dI5li-fjbz9UmquRkCHsi3woZa1HEqUce2AY4A-O7JddtXAxJOcnfS50k5WWsVvLg0jnTNivSt0pp8TMax5WZrKiWjAu2HgudTjHWGwFoyCXR4y0wXyjqtRoMAOMureuZNA08g-Kc_0qmaDEW3wkUV2vBMD9FDFXQB5oRloesN2EGOlANEKotBb8.iwa6m9o4VTDpLl3NLb2kNh0tUCQYzQgty3iM4pUMPX8&dib_tag=se&qid=1754355377&refinements=p_4%3ASmoking%2BMeat%2BBBQ%2BCharacter%2BBarbecue%2BPun%2BApparel&s=apparel&sr=1-18&customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1",
-  "category": "BBQ & Food"
-}
+  {
+    "title": "Sausage Master",
+    "slug": "sausage-master",
+    "image": "/images/sausage-master.png",
+    "description": "For the grill kings who know their links. This one's for the meat whisperers.",
+    "category": "BBQ & Food",
+    "amazonUrl": "https://www.amazon.com/Barbecue-Pun-Meat-BBQ-Sausage/dp/B0F4LX926C?th=1&psc=1",
+    "seoTitle": "Sausage Master BBQ Shirt – Funny Grilling Tee for Meat Lovers",
+    "metaDescription": "Declare your dominance at the grill with the Sausage Master tee. A bold, smoky design perfect for backyard BBQs, meat lovers, and link legends."
+  }
 ]
