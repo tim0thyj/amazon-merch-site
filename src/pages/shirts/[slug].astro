@@ -20,7 +20,7 @@ if (!shirt) {
   <a href="/" class="back-button">&larr; Back</a>
 
   <div class="shirt-detail">
-    <img src={shirt.image} alt={shirt.title} />
+    <img src={shirt.detailImage ?? shirt.image} alt={shirt.title} />
     <h1>{shirt.title}</h1>
     <p>{shirt.description}</p>
     <a

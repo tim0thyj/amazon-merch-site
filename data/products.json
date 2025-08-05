@@ -1,28 +1,31 @@
 [
   {
-    "title": "Cookies Shirt – Tech Humor",
+    "title": "I Love Cookies - Funny Tech T-Shirt for IT Pros",
     "slug": "cookies-tech",
     "image": "/images/cookies-tech.png",
-    "description": "For the dev who clears cookies... only under protest. A perfect tee for IT folks and browser warriors.",
+    "homepageBlurb": "Cookies aren't just for browsers. For IT lovers and pun enthusiasts alike - this one's for you",
+    "description":"This isn't about chocolate chip. It's about cache-clearing, server-slinging, cookie-wrangling brilliance. The I Love Cookies t-shirt is made for IT professionals, coders, cybersecurity folks, and anyone who enjoys a solid tech pun.",
     "category": "IT & Tech",
     "amazonUrl": "https://www.amazon.com/dp/B0F3M2RHTP?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1",
     "seoTitle": "Funny ‘I Love Cookies’ Tech Shirt – Web Developer Humor Tee",
     "metaDescription": "A must-have shirt for devs who live in Chrome and snack on cookies—digital and edible. Great gift for IT pros and code nerds alike."
   },
   {
-    "title": "Rib Master BBQ Shirt",
+    "title": "Meat Me At The Smoker - Funny BBQ Ribs T-Shirt for Pitmasters & Grill Fans",
     "slug": "rib-master",
     "image": "/images/rib-master.png",
-    "description": "Low and slow. This one's for the pitmasters who know the language of smoke, sauce, and perfectly charred ribs.",
+    "homepageBlurb": "Low and slow. Pitmasters know.",
+    "description": "Meat Me At The Smoker isn't just a shirt - it's a full-on BBQ vibe. With a hilarious retro cartoon rib front and center, this tee brings personality to every cookout, backyard bash, or competition. Whether you're tending brisket, pulling pork, or simply enjopy the smoky glory, this t-shirt says you take BBQ seriously - and with style.",
     "category": "BBQ & Food",
     "amazonUrl": "https://www.amazon.com/dp/B0F4LPLSQL?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1",
-    "seoTitle": "Rib Master BBQ Shirt – Low & Slow Pitmaster Graphic Tee",
-    "metaDescription": "The perfect shirt for backyard legends and low-and-slow rib kings. This tee’s got smoke, sass, and sauce. Great gift for grill dads and meatheads."
+    "seoTitle": "Funny BBQ T-Shirt - Meat Me At The Smoker Retro Cartoon Ribs Tee for Pitmasters and Grill Lovers",
+    "metaDescription": "Get laughs and compliments in the “Meat Me At The Smoker” BBQ t-shirt - the ultimate funny grill shirt for pitmasters, BBQ lovers, and meat-smoking champs. A retro cartoon rib pun shirt built to stand out at any cookout or competition."
   },
   {
     "title": "Trail Mix Adventure Club",
     "slug": "trail-mix",
     "image": "/images/trail-mix.png",
+    "homepageBlurb": "Low and slow. Pitmasters know.",
     "description": "Nuts, chocolate, and pure outdoor vibes. The retro hiking shirt for snackers with a love for dirt trails and pine trees.",
     "category": "Outdoors & Hiking",
     "amazonUrl": "https://www.amazon.com/dp/B0FBHPYSZP?customId=B0752XJYNL&customizationToken=MC_Assembly_1%23B0752XJYNL&th=1&psc=1",
@@ -33,6 +36,7 @@
     "title": "Sausage Master",
     "slug": "sausage-master",
     "image": "/images/sausage-master.png",
+    "homepageBlurb": "Low and slow. Pitmasters know.",
     "description": "For the grill kings who know their links. This one's for the meat whisperers.",
     "category": "BBQ & Food",
     "amazonUrl": "https://www.amazon.com/Barbecue-Pun-Meat-BBQ-Sausage/dp/B0F4LX926C?th=1&psc=1",

@@ -17,7 +17,7 @@ const categories = ['All', ...new Set(products.map(p => p.category))];
         <img src={shirt.image} alt={shirt.title} />
         <div class="content">
           <h2>{shirt.title}</h2>
-          <p>{shirt.description}</p>
+          <p>{shirt.homepageBlurb}</p>
         </div>
       </a>
       <div style="text-align: center;">

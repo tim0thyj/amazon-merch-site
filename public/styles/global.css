@@ -205,7 +205,9 @@ a.buy-button:hover {
   gap: 1rem;
   text-align: center;
 }
-
+.shirt-detail p {
+  text-align: left;
+}
 .shirt-detail img {
   width: 100%;
   max-width: 500px;
