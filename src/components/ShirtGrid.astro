@@ -1,37 +1,71 @@
 ---
 import products from '../../data/products.json';
+
+const categories = ['All', ...new Set(products.map(p => p.category))];
 ---
 
 <style>
-  section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0;
+    justify-content: center;
+  }
+
+  .filters button {
+    background: #eee;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .filters button.active {
+    background: #222;
+    color: #fff;
+  }
+
+  section.grid {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 2.5rem;
-    padding: 2rem;
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  padding-bottom: 1.5rem; /* extra space for button breathing room */
-}
-
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    flex: 0 0 280px;
+    max-width: 280px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
   }
+
+  .card.hidden {
+  display: none;
+}
 
   img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    display: block;
+    border-bottom: 1px solid #ddd;
   }
 
   h2 {
@@ -42,7 +76,6 @@ import products from '../../data/products.json';
   p {
     font-size: 0.95rem;
     color: #444;
-    padding: 0 1rem;
   }
 
   .content {
@@ -50,41 +83,73 @@ import products from '../../data/products.json';
     text-align: center;
   }
 
-   .buy-button {
-  margin-top: auto;
-  align-self: center;
-  background: #FF9900;
-  color: #111;
-  text-decoration: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  transition: background 0.2s ease;
-}
-
-.buy-button:hover {
-  background: #FFB84D; /* lighter hover */
-}
-
-
-  .buy-button:hover {
-    background: #e48f00;
+  .buy-button {
+    display: inline-block;
+    background-color: #ff9900;
+    color: #111;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
   }
 
+  .buy-button:hover {
+    background-color: #ffc266;
+  }
 </style>
 
-<section>
+<div class="filters" id="filters">
+  {categories.map((cat) => (
+    <button data-category={cat} class={cat === 'All' ? 'active' : ''}>{cat}</button>
+  ))}
+  <button data-category="All" id="clear-filter">Clear Filter</button>
+</div>
+
+<section class="grid" id="shirt-grid">
   {products.map((shirt) => (
-    <div class="card">
+    <div class="card" data-category={shirt.category}>
       <img src={shirt.image} alt={shirt.title} />
       <div class="content">
         <h2>{shirt.title}</h2>
         <p>{shirt.description}</p>
         <a class="buy-button" href={shirt.amazonUrl} target="_blank" rel="noopener noreferrer">
-  Buy on Amazon
-</a>
+          Buy on Amazon
+        </a>
       </div>
     </div>
   ))}
 </section>
+
+<script is:inline>
+  const buttons = document.querySelectorAll('#filters button');
+  const grid = document.querySelector('#shirt-grid');
+  const cards = Array.from(document.querySelectorAll('.card'));
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.category;
+
+      // Toggle active button styling
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (button.id !== 'clear-filter') {
+        button.classList.add('active');
+      }
+
+      // Filter logic
+      const matchedCards = cards.filter(card =>
+        category === 'All' || card.dataset.category === category
+      );
+
+      // Clear grid and repopulate only matched cards
+      grid.innerHTML = '';
+      matchedCards.forEach(card => {
+        grid.appendChild(card);
+        card.classList.remove('hidden');
+      });
+    });
+  });
+</script>
+
